@@ -1,0 +1,16 @@
+:host-context {
+    .alert {
+        width: 100%;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px 0;
+    }
+
+    .error {
+        background-color: darkred;
+    }
+
+    .success {
+        background-color: darkgreen;
+    }
+}

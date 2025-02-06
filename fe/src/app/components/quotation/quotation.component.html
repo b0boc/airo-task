@@ -1,0 +1,32 @@
+<form [formGroup]="quotationForm" (submit)="getQuotation()" class="quotation-form">
+    <div class="form-field">
+        <label for="age">Age</label>
+        <input id="age" type="text" formControlName="age">
+    </div>
+    <div class="form-field">
+        <label for="currency_id">Currency</label>
+        <select id="currency_id" type="currency_id" formControlName="currency_id">
+            <option *ngFor="let cur of supportedCurrencies" [value]="cur">{{ cur }}</option>
+        </select>
+    </div>
+    <div class="form-field">
+        <label for="start_date">From date</label>
+        <input id="start_date" type="date" formControlName="start_date">
+    </div>
+    <div class="form-field">
+        <label for="end_date">To date</label>
+        <input id="end_date" type="date" formControlName="end_date">
+    </div>
+    <input type="submit" value="Get quotation!" class="btn">
+</form>
+
+<div *ngIf="quotes.length" class="quotes">
+    <div *ngFor="let quote of quotes" class="quote">
+        Quote {{ quote.quotation_id }}
+        <hr />
+        <span *ngIf="quote.currency_id == 'USD'">USD </span>
+        <span *ngIf="quote.currency_id == 'EUR'">EUR </span>
+        <span *ngIf="quote.currency_id == 'GBP'">GBP </span>
+        <span>{{ quote.total }}</span>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<form *ngIf="showLogin" [formGroup]="loginForm" (submit)="login()">
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Email">
+    </div>
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Password">
+    </div>
+    <input type="submit" value="Login" class="btn">
+</form>
+<button *ngIf="!showLogin" (click)="logout()" class="btn">Logout</button>

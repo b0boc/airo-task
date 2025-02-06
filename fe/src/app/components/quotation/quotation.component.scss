@@ -1,0 +1,37 @@
+:host-context {
+    display: flex;
+    .quotation-form {
+        margin: 20px auto;
+        max-width: 300px;
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 20px;
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            label {
+                display: block;
+            }
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
+    .quote {
+        border: 1px solid black;
+        border-radius: 7px;
+        padding: 20px;
+        margin: 20px;
+    }
+}

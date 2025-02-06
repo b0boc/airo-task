@@ -1,0 +1,32 @@
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:8000"
+    volumes:
+      - api_storage:/var/www/storage
+    depends_on:
+      - mongodb
+    environment:
+      - DB_CONNECTION=mongodb
+      - DB_HOST=mongodb
+      - DB_PORT=27017
+      - DB_DATABASE=admin
+
+  fe:
+    build: ./fe
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  api_storage:
+  mongo_data:
